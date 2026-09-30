@@ -1,17 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MVC_Start.Models;
 
 namespace MVC_Start.Controllers
 {
-  public class HomeController : Controller
-  {
-    public IActionResult Index()
+    public class HomeController : Controller
     {
-      return View();
+        // GET: /Home/Index
+        public IActionResult Index()
+        {
+            // 1. MODELO: Creamos u obtenemos los datos
+            var invitado = new GuestContact
+            {
+                Name = "Anthony Buitrago",
+                Email = "anthonybuitrago8@gmail.com",
+                Phone = "+1 829 324 2330"
+            };
+
+            // 2. VISTA: Enviamos el modelo como parámetro a la vista
+            return View(invitado);
+        }
     }
-  }
 }

@@ -1,15 +1,40 @@
-﻿@{
-    Layout = null;
+@model GuestContact
+@{
+    ViewData["Title"] = "Demostración MVC";
 }
 
-<!DOCTYPE html>
+<div style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+    <h2 style="color: #2b6cb0; margin-bottom: 0.5rem; border-bottom: 2px solid #ebf8ff; padding-bottom: 0.5rem;">
+        Demostración del Flujo MVC
+    </h2>
+    <p style="color: #4a5568; margin-bottom: 1.5rem; font-size: 0.95rem;">
+        Esta vista demuestra cómo el <strong>Controlador</strong> (<code>HomeController</code>) recibió la petición del usuario, 
+        obtuvo los datos definidos en el <strong>Modelo</strong> (<code>GuestContact</code>) y los renderizó dinámicamente en esta <strong>Vista</strong> (<code>Index.cshtml</code>).
+    </p>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-  <h2>Hello world!</h2>
-</body>
-</html>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+        <div style="border-left: 4px solid #3182ce; padding: 1rem; background: #ebf8ff; border-radius: 0 8px 8px 0;">
+            <span style="font-size: 0.75rem; text-transform: uppercase; font-weight: bold; color: #2b6cb0;">Propiedad: Nombre</span>
+            <h3 style="margin-top: 4px; color: #1a202c; font-size: 1.25rem;">@Model.Name</h3>
+        </div>
+
+        <div style="border-left: 4px solid #38a169; padding: 1rem; background: #f0fff4; border-radius: 0 8px 8px 0;">
+            <span style="font-size: 0.75rem; text-transform: uppercase; font-weight: bold; color: #276749;">Propiedad: Correo</span>
+            <h3 style="margin-top: 4px; color: #1a202c; font-size: 1.25rem;">@Model.Email</h3>
+        </div>
+
+        <div style="border-left: 4px solid #d69e2e; padding: 1rem; background: #fefcbf; border-radius: 0 8px 8px 0;">
+            <span style="font-size: 0.75rem; text-transform: uppercase; font-weight: bold; color: #975a16;">Propiedad: Teléfono</span>
+            <h3 style="margin-top: 4px; color: #1a202c; font-size: 1.25rem;">@Model.Phone</h3>
+        </div>
+    </div>
+
+    <div style="background: #edf2f7; border-radius: 8px; padding: 1.2rem; font-size: 0.9rem; color: #2d3748;">
+        <strong>Resumen de Arquitectura en esta pantalla:</strong>
+        <ul style="margin-left: 1.5rem; margin-top: 0.5rem; line-height: 1.6;">
+            <li><strong>Modelo:</strong> <code>App_Models.cs</code> define la clase <code>GuestContact</code> con sus propiedades.</li>
+            <li><strong>Controlador:</strong> <code>HomeController.cs</code> procesa la acción <code>Index()</code> y transfiere el objeto a la vista mediante <code>return View(invitado);</code>.</li>
+            <li><strong>Vista:</strong> <code>Index.cshtml</code> recibe el objeto con <code>@@model GuestContact</code> y muestra sus campos con <code>@@Model.Name</code>, etc.</li>
+        </ul>
+    </div>
+</div>

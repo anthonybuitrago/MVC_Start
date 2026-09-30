@@ -1,20 +1,31 @@
-﻿<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <link rel="stylesheet" href="~/css/site.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demostración Patrón MVC</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f0f2f5; color: #333; display: flex; flex-direction: column; min-height: 100vh; }
+        header { background: #1a365d; color: white; padding: 1.2rem 2rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        header h1 { font-size: 1.5rem; font-weight: 600; }
+        header p { font-size: 0.9rem; opacity: 0.85; margin-top: 4px; }
+        main { flex: 1; padding: 2.5rem 1rem; max-width: 900px; margin: 0 auto; width: 100%; }
+        footer { background: #2d3748; color: #cbd5e0; text-align: center; padding: 1rem; font-size: 0.85rem; }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>Arquitectura MVC (Modelo - Vista - Controlador)</h1>
+        <p>Proyecto ASP.NET Core</p>
+    </header>
 
-  <div class="header">
-    Header goes here
-  </div>
-  
-  <div class="body-content">
-    @RenderBody()
-  </div>
+    <main>
+        @RenderBody()
+    </main>
 
-  <div class="footer">
-    Footer goes here
-  </div>
+    <footer>
+        <p>Demostración Académica MVC &copy; 2026</p>
+    </footer>
 </body>
 </html>
